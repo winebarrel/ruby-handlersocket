@@ -71,7 +71,7 @@ struct HandlerSocket {
     }
 
     if (NIL_P(listen_backlog)) {
-      conf["listen_backlog"] = "600";
+      conf["listen_backlog"] = "256";
     } else {
       Check_Type(listen_backlog, T_FIXNUM);
       listen_backlog = rb_check_convert_type(listen_backlog, T_STRING, "String", "to_s");
