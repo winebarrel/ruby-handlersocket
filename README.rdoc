@@ -19,7 +19,7 @@ see http://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL/blob/master/docs-en
   require 'handlersocket'
   
   hs = HandlerSocket.new('127.0.0.1', 9999)
-  # ArgsÅidefault valueÅj
+  # Args (default value)
   # host(localhost), port(9998), timeout(600), listen_backlog(256)
   
   hs.open_index(3, 'employees', 'departments', 'PRIMARY', 'dept_no,dept_name');
