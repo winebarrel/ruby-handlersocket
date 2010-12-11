@@ -1,4 +1,4 @@
-#include <handlersocket/hstcpcli.hpp>
+#include <libhsclient/hstcpcli.cpp>
 #include "handlersocket.h"
 
 namespace {
