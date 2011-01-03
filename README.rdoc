@@ -1,0 +1,33 @@
+= ruby-handlersocket
+
+== Description
+
+Ruby bindings for HandlerSocket plugin
+see http://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL
+
+== Build
+
+ruby extconf.rb
+make
+
+== API Specifications
+
+see http://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL/blob/master/docs-en/perl-client.en.txt
+
+== Example
+
+  require 'handlersocket'
+  
+  hs = HandlerSocket.new('127.0.0.1', 9999)
+  # Args (default value)
+  # host(localhost), port(9998), timeout(600), listen_backlog(256)
+  
+  hs.open_index(3, 'employees', 'departments', 'PRIMARY', 'dept_no,dept_name');
+  
+  res = hs.execute_single(3, '>=', ['d004'], 100, 0);
+  # => [0, "d005", "Development", "d006", "Quality Management", "d007", "Sales", "d008", "Research", "d009", "Customer Service"]
+  
+  hs.execute_insert(3, ['d999', 'XYZ']);
+  hs.execute_delete(3, '=', ['d007'], 1, 0);
+  
+  hs.close
